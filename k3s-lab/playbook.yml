@@ -1,0 +1,12 @@
+# TP14 partie 1 : déploiement de K3s via le rôle k3s
+- name: Nœud server (control plane)
+  hosts: server
+  become: true
+  roles:
+    - k3s
+
+- name: Nœuds agents (workers)
+  hosts: agents
+  become: true
+  roles:
+    - k3s

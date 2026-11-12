@@ -1,0 +1,20 @@
+# TP14 partie 3 : Ingress servi par Traefik (installé par défaut avec K3s).
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whoami
+  namespace: tp14
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: whoami.lab.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami
+                port:
+                  name: http
+# TODO : ajouter une règle /api vers un second Service (nginx) dans le même Ingress

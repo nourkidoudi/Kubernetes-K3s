@@ -1,0 +1,4 @@
+k3s_version: "v1.37.2+k3s1"
+k3s_server_ip: "192.168.56.10"
+k3s_network_prefix: "192\\.168\\.56\\."
+k3s_kubeconfig_dest: "{{ playbook_dir }}/k3s.yaml"

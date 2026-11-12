@@ -1,0 +1,13 @@
+- name: Installer curl
+  ansible.builtin.apt:
+    name: curl
+    state: present
+    update_cache: true
+
+- name: Tâches du server
+  ansible.builtin.include_tasks: server.yml
+  when: "'server' in group_names"
+
+- name: Tâches de l'agent
+  ansible.builtin.include_tasks: agent.yml
+  when: "'agents' in group_names"
