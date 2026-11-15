@@ -10,6 +10,13 @@ spec:
     - host: whoami.lab.local
       http:
         paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-api
+                port:
+                  name: http
           - path: /
             pathType: Prefix
             backend:
@@ -17,4 +24,3 @@ spec:
                 name: whoami
                 port:
                   name: http
-# TODO : ajouter une règle /api vers un second Service (nginx) dans le même Ingress

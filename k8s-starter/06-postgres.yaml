@@ -41,4 +41,10 @@ spec:
               value: /var/lib/postgresql/data/pgdata
           ports:
             - containerPort: 5432
-          # TODO : monter le PVC pgdata sur /var/lib/postgresql/data (volumes + volumeMounts)
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: pgdata

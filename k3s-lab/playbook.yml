@@ -4,7 +4,6 @@
   become: true
   roles:
     - k3s
-
 - name: Nœuds agents (workers)
   hosts: agents
   become: true

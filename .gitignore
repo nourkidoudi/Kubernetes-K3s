@@ -1,3 +1,7 @@
 k3s.yaml
+**/k3s.yaml
+k3s-lab/k3s
+sha256sum-amd64.txt
 .vagrant/
-*secret*
+*.bak
+*.retry
